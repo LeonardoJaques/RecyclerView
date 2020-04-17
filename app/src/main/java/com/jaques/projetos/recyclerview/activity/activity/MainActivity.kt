@@ -2,19 +2,17 @@ package com.jaques.projetos.recyclerview.activity.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jaques.projetos.recyclerview.R
 
-import com.jaques.projetos.recyclerview.activity.adapter.Adapter
+import com.jaques.projetos.recyclerview.activity.adapter.MainAdapter
 
 import com.jaques.projetos.recyclerview.activity.model.DataSource
-import com.jaques.projetos.recyclerview.activity.model.Filme
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var filmeAdapter: Adapter
+    private lateinit var filmeAdapter: MainAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +31,9 @@ class MainActivity : AppCompatActivity() {
     private fun iniRecyclerView() {
         idRecyclerView.apply {
             idRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-            filmeAdapter = Adapter()
+            filmeAdapter = MainAdapter()
             idRecyclerView.adapter = filmeAdapter
-
         }
     }
 }
+
